@@ -1,0 +1,567 @@
+2025-10-08T15:22:26.822+05:30  INFO 13108 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 13108 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T15:22:26.828+05:30  INFO 13108 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T15:22:29.160+05:30  INFO 13108 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T15:22:29.296+05:30  INFO 13108 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 0 JPA repository interfaces.
+2025-10-08T15:22:30.486+05:30  INFO 13108 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T15:22:30.522+05:30  INFO 13108 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T15:22:30.523+05:30  INFO 13108 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T15:22:30.719+05:30  INFO 13108 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T15:22:30.720+05:30  INFO 13108 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3756 ms
+2025-10-08T15:22:31.153+05:30  INFO 13108 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T15:22:31.314+05:30  INFO 13108 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T15:22:31.403+05:30  INFO 13108 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T15:22:32.247+05:30  INFO 13108 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T15:22:32.343+05:30  INFO 13108 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T15:22:33.805+05:30  WARN 13108 --- [book-inventory-management] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1045, SQLState: 28000
+2025-10-08T15:22:33.806+05:30 ERROR 13108 --- [book-inventory-management] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Access denied for user 'your_username'@'localhost' (using password: YES)
+2025-10-08T15:22:33.808+05:30  WARN 13108 --- [book-inventory-management] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+
+org.hibernate.exception.GenericJDBCException: unable to obtain isolated JDBC connection [Access denied for user 'your_username'@'localhost' (using password: YES)] [n/a]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:63) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.sql.SQLException: Access denied for user 'your_username'@'localhost' (using password: YES)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:370) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:207) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-6.3.3.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-6.3.3.jar:na]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:485) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	... 35 common frames omitted
+
+2025-10-08T15:22:33.883+05:30  WARN 13108 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T15:22:33.886+05:30  WARN 13108 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T15:22:33.920+05:30  INFO 13108 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T15:22:34.456+05:30  WARN 13108 --- [book-inventory-management] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+2025-10-08T15:22:34.465+05:30  INFO 13108 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-08T15:22:34.491+05:30  INFO 13108 --- [book-inventory-management] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-08T15:22:34.553+05:30 ERROR 13108 --- [book-inventory-management] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: scale has no meaning for SQL floating point types
+	at org.hibernate.dialect.Dialect$SizeStrategyImpl.resolveSize(Dialect.java:5449) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.dialect.MySQLDialect$1.resolveSize(MySQLDialect.java:152) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.Column.calculateColumnSize(Column.java:468) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:363) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:342) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1766) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1744) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 15 common frames omitted
+
+2025-10-08T15:39:15.271+05:30  INFO 25080 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 25080 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T15:39:15.284+05:30  INFO 25080 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T15:39:17.518+05:30  INFO 25080 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T15:39:17.707+05:30  INFO 25080 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164 ms. Found 1 JPA repository interface.
+2025-10-08T15:39:18.788+05:30  INFO 25080 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T15:39:18.827+05:30  INFO 25080 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T15:39:18.828+05:30  INFO 25080 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T15:39:19.013+05:30  INFO 25080 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T15:39:19.014+05:30  INFO 25080 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3616 ms
+2025-10-08T15:39:19.444+05:30  INFO 25080 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T15:39:19.630+05:30  INFO 25080 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T15:39:19.732+05:30  INFO 25080 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T15:39:20.483+05:30  INFO 25080 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T15:39:20.558+05:30  INFO 25080 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T15:39:20.906+05:30  INFO 25080 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@12214f2f
+2025-10-08T15:39:20.911+05:30  INFO 25080 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T15:39:20.963+05:30  WARN 25080 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T15:39:20.966+05:30  WARN 25080 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T15:39:21.018+05:30  INFO 25080 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T15:39:21.419+05:30  WARN 25080 --- [book-inventory-management] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+2025-10-08T15:39:21.420+05:30  INFO 25080 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-08T15:39:21.446+05:30  INFO 25080 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-08T15:39:21.451+05:30  INFO 25080 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-08T15:39:21.469+05:30  INFO 25080 --- [book-inventory-management] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-08T15:39:21.505+05:30 ERROR 25080 --- [book-inventory-management] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: scale has no meaning for SQL floating point types
+	at org.hibernate.dialect.Dialect$SizeStrategyImpl.resolveSize(Dialect.java:5449) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.dialect.MySQLDialect$1.resolveSize(MySQLDialect.java:152) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.Column.calculateColumnSize(Column.java:468) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:363) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:342) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1766) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1744) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 15 common frames omitted
+
+2025-10-08T15:56:03.856+05:30  INFO 1852 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 1852 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T15:56:03.861+05:30  INFO 1852 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T15:56:05.454+05:30  INFO 1852 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T15:56:05.631+05:30  INFO 1852 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 1 JPA repository interface.
+2025-10-08T15:56:06.529+05:30  INFO 1852 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T15:56:06.556+05:30  INFO 1852 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T15:56:06.557+05:30  INFO 1852 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T15:56:06.695+05:30  INFO 1852 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T15:56:06.696+05:30  INFO 1852 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2728 ms
+2025-10-08T15:56:07.022+05:30  INFO 1852 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T15:56:07.139+05:30  INFO 1852 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T15:56:07.204+05:30  INFO 1852 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T15:56:07.745+05:30  INFO 1852 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T15:56:07.805+05:30  INFO 1852 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T15:56:08.087+05:30  INFO 1852 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59313495
+2025-10-08T15:56:08.090+05:30  INFO 1852 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T15:56:08.126+05:30  WARN 1852 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T15:56:08.128+05:30  WARN 1852 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T15:56:08.167+05:30  INFO 1852 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T15:56:08.472+05:30  WARN 1852 --- [book-inventory-management] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+2025-10-08T15:56:08.472+05:30  INFO 1852 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-08T15:56:08.485+05:30  INFO 1852 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-08T15:56:08.491+05:30  INFO 1852 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-08T15:56:08.510+05:30  INFO 1852 --- [book-inventory-management] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-08T15:56:08.541+05:30 ERROR 1852 --- [book-inventory-management] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: scale has no meaning for SQL floating point types
+	at org.hibernate.dialect.Dialect$SizeStrategyImpl.resolveSize(Dialect.java:5449) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.dialect.MySQLDialect$1.resolveSize(MySQLDialect.java:152) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.Column.calculateColumnSize(Column.java:468) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:363) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:342) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1766) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1744) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 15 common frames omitted
+
+2025-10-08T16:10:26.222+05:30  INFO 27888 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 27888 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T16:10:26.228+05:30  INFO 27888 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T16:10:27.917+05:30  INFO 27888 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T16:10:28.048+05:30  INFO 27888 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interface.
+2025-10-08T16:10:29.015+05:30  INFO 27888 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T16:10:29.044+05:30  INFO 27888 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T16:10:29.045+05:30  INFO 27888 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T16:10:29.213+05:30  INFO 27888 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T16:10:29.214+05:30  INFO 27888 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2873 ms
+2025-10-08T16:10:29.563+05:30  INFO 27888 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T16:10:29.703+05:30  INFO 27888 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T16:10:29.796+05:30  INFO 27888 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T16:10:30.452+05:30  INFO 27888 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T16:10:30.514+05:30  INFO 27888 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T16:10:30.808+05:30  INFO 27888 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@194911c1
+2025-10-08T16:10:30.811+05:30  INFO 27888 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T16:10:30.851+05:30  WARN 27888 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T16:10:30.853+05:30  WARN 27888 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T16:10:30.886+05:30  INFO 27888 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T16:10:31.228+05:30  WARN 27888 --- [book-inventory-management] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+2025-10-08T16:10:31.229+05:30  INFO 27888 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-08T16:10:31.255+05:30  INFO 27888 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-08T16:10:31.261+05:30  INFO 27888 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-08T16:10:31.278+05:30  INFO 27888 --- [book-inventory-management] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-08T16:10:31.316+05:30 ERROR 27888 --- [book-inventory-management] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: scale has no meaning for SQL floating point types
+	at org.hibernate.dialect.Dialect$SizeStrategyImpl.resolveSize(Dialect.java:5449) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.dialect.MySQLDialect$1.resolveSize(MySQLDialect.java:152) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.Column.calculateColumnSize(Column.java:468) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:363) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:342) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1766) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1744) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 15 common frames omitted
+
+2025-10-08T16:14:34.055+05:30  INFO 24336 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 24336 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T16:14:34.059+05:30  INFO 24336 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T16:14:35.619+05:30  INFO 24336 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T16:14:35.756+05:30  INFO 24336 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 1 JPA repository interface.
+2025-10-08T16:14:36.658+05:30  INFO 24336 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T16:14:36.683+05:30  INFO 24336 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T16:14:36.684+05:30  INFO 24336 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T16:14:36.825+05:30  INFO 24336 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T16:14:36.826+05:30  INFO 24336 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2668 ms
+2025-10-08T16:14:37.150+05:30  INFO 24336 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T16:14:37.268+05:30  INFO 24336 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T16:14:37.342+05:30  INFO 24336 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T16:14:37.915+05:30  INFO 24336 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T16:14:37.974+05:30  INFO 24336 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T16:14:38.272+05:30  INFO 24336 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6785c9fa
+2025-10-08T16:14:38.275+05:30  INFO 24336 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T16:14:38.312+05:30  WARN 24336 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T16:14:38.314+05:30  WARN 24336 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T16:14:38.350+05:30  INFO 24336 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T16:14:38.673+05:30  WARN 24336 --- [book-inventory-management] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+2025-10-08T16:14:38.673+05:30  INFO 24336 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-08T16:14:38.706+05:30  INFO 24336 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-08T16:14:38.711+05:30  INFO 24336 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-08T16:14:38.728+05:30  INFO 24336 --- [book-inventory-management] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-08T16:14:38.758+05:30 ERROR 24336 --- [book-inventory-management] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: scale has no meaning for SQL floating point types
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1826) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.11.jar:6.2.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.6.jar:3.5.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.6.jar:3.5.6]
+	at com.example.bookInventory.BookInventoryApplication.main(BookInventoryApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: scale has no meaning for SQL floating point types
+	at org.hibernate.dialect.Dialect$SizeStrategyImpl.resolveSize(Dialect.java:5449) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.dialect.MySQLDialect$1.resolveSize(MySQLDialect.java:152) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.Column.calculateColumnSize(Column.java:468) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:363) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.mapping.BasicValue.resolve(BasicValue.java:342) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.lambda$processValueResolvers$6(InFlightMetadataCollectorImpl.java:1827) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1766) ~[na:na]
+	at java.base/java.util.ArrayList.removeIf(ArrayList.java:1744) ~[na:na]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processValueResolvers(InFlightMetadataCollectorImpl.java:1826) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1812) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:334) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513) ~[hibernate-core-6.6.29.Final.jar:6.6.29.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873) ~[spring-beans-6.2.11.jar:6.2.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822) ~[spring-beans-6.2.11.jar:6.2.11]
+	... 15 common frames omitted
+
+2025-10-08T16:16:14.576+05:30  INFO 22048 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 22048 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T16:16:14.579+05:30  INFO 22048 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T16:16:16.077+05:30  INFO 22048 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T16:16:16.204+05:30  INFO 22048 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 1 JPA repository interface.
+2025-10-08T16:16:17.035+05:30  INFO 22048 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T16:16:17.060+05:30  INFO 22048 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T16:16:17.060+05:30  INFO 22048 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T16:16:17.217+05:30  INFO 22048 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T16:16:17.218+05:30  INFO 22048 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2540 ms
+2025-10-08T16:16:17.534+05:30  INFO 22048 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T16:16:17.654+05:30  INFO 22048 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T16:16:17.729+05:30  INFO 22048 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T16:16:18.278+05:30  INFO 22048 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T16:16:18.338+05:30  INFO 22048 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T16:16:18.616+05:30  INFO 22048 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ccdacf5
+2025-10-08T16:16:18.619+05:30  INFO 22048 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T16:16:18.653+05:30  WARN 22048 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T16:16:18.655+05:30  WARN 22048 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T16:16:18.684+05:30  INFO 22048 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T16:16:19.984+05:30  INFO 22048 --- [book-inventory-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-08T16:16:20.125+05:30  INFO 22048 --- [book-inventory-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-08T16:16:20.928+05:30  WARN 22048 --- [book-inventory-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-08T16:16:21.149+05:30 DEBUG 22048 --- [book-inventory-management] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2025-10-08T16:16:21.288+05:30 DEBUG 22048 --- [book-inventory-management] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-10-08T16:16:21.339+05:30 DEBUG 22048 --- [book-inventory-management] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-10-08T16:16:21.426+05:30 DEBUG 22048 --- [book-inventory-management] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-10-08T16:16:21.756+05:30  INFO 22048 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-08T16:16:21.774+05:30  INFO 22048 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Started BookInventoryApplication in 8.054 seconds (process running for 8.769)
+2025-10-08T16:16:48.970+05:30  INFO 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-08T16:16:48.971+05:30  INFO 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-08T16:16:48.972+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-10-08T16:16:48.972+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-10-08T16:16:48.972+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-10-08T16:16:48.973+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7388486e
+2025-10-08T16:16:48.974+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@5519ef7d
+2025-10-08T16:16:48.975+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-10-08T16:16:48.975+05:30  INFO 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-10-08T16:16:48.993+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/author", parameters={}
+2025-10-08T16:16:49.010+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-10-08T16:16:49.036+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-10-08T16:16:49.043+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.bookInventory.exception.GlobalExceptionHandler#handleGeneral(Exception)
+2025-10-08T16:16:49.071+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2025-10-08T16:16:49.073+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["No static resource api/author."]
+2025-10-08T16:16:49.084+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/author.]
+2025-10-08T16:16:49.087+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2025-10-08T16:17:46.711+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/author", parameters={}
+2025-10-08T16:17:46.712+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-10-08T16:17:46.715+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-10-08T16:17:46.716+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.bookInventory.exception.GlobalExceptionHandler#handleGeneral(Exception)
+2025-10-08T16:17:46.718+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2025-10-08T16:17:46.719+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["No static resource api/author."]
+2025-10-08T16:17:46.720+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/author.]
+2025-10-08T16:17:46.720+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2025-10-08T16:17:54.183+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/author/", parameters={}
+2025-10-08T16:17:54.185+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.bookInventory.controller.AuthorController#addAuthor(Author)
+2025-10-08T16:17:54.336+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Author [authorId=1, firstName=Gokul, lastName=Anand, photoUrl=null]]
+2025-10-08T16:17:54.519+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.bookInventory.exception.GlobalExceptionHandler#handleGeneral(Exception)
+2025-10-08T16:17:54.519+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2025-10-08T16:17:54.520+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.exa (truncated)..."]
+2025-10-08T16:17:54.521+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.example.bookInventory.entity.Author#1]]
+2025-10-08T16:17:54.522+05:30 DEBUG 22048 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2025-10-08T16:19:58.508+05:30  INFO 28112 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Starting BookInventoryApplication using Java 23.0.2 with PID 28112 (C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory\target\classes started by ganandvi in C:\Users\ganandvi\OneDrive - Capgemini\Documents\BookInventory)
+2025-10-08T16:19:58.518+05:30  INFO 28112 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-10-08T16:20:00.075+05:30  INFO 28112 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-08T16:20:00.193+05:30  INFO 28112 --- [book-inventory-management] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 1 JPA repository interface.
+2025-10-08T16:20:01.068+05:30  INFO 28112 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-08T16:20:01.092+05:30  INFO 28112 --- [book-inventory-management] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-08T16:20:01.093+05:30  INFO 28112 --- [book-inventory-management] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-08T16:20:01.245+05:30  INFO 28112 --- [book-inventory-management] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-08T16:20:01.246+05:30  INFO 28112 --- [book-inventory-management] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2643 ms
+2025-10-08T16:20:01.585+05:30  INFO 28112 --- [book-inventory-management] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-08T16:20:01.721+05:30  INFO 28112 --- [book-inventory-management] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-08T16:20:01.813+05:30  INFO 28112 --- [book-inventory-management] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-08T16:20:02.402+05:30  INFO 28112 --- [book-inventory-management] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-08T16:20:02.473+05:30  INFO 28112 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-08T16:20:02.777+05:30  INFO 28112 --- [book-inventory-management] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@15186ce0
+2025-10-08T16:20:02.779+05:30  INFO 28112 --- [book-inventory-management] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-08T16:20:02.831+05:30  WARN 28112 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-10-08T16:20:02.834+05:30  WARN 28112 --- [book-inventory-management] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-10-08T16:20:02.879+05:30  INFO 28112 --- [book-inventory-management] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-08T16:20:04.273+05:30  INFO 28112 --- [book-inventory-management] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-08T16:20:04.373+05:30  INFO 28112 --- [book-inventory-management] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-08T16:20:05.132+05:30  WARN 28112 --- [book-inventory-management] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-08T16:20:05.330+05:30 DEBUG 28112 --- [book-inventory-management] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2025-10-08T16:20:05.486+05:30 DEBUG 28112 --- [book-inventory-management] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-10-08T16:20:05.544+05:30 DEBUG 28112 --- [book-inventory-management] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-10-08T16:20:05.634+05:30 DEBUG 28112 --- [book-inventory-management] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-10-08T16:20:05.963+05:30  INFO 28112 --- [book-inventory-management] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-10-08T16:20:05.978+05:30  INFO 28112 --- [book-inventory-management] [main] c.e.b.BookInventoryApplication           : Started BookInventoryApplication in 8.307 seconds (process running for 9.068)
+2025-10-08T16:20:17.211+05:30  INFO 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-08T16:20:17.212+05:30  INFO 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-08T16:20:17.213+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-10-08T16:20:17.213+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-10-08T16:20:17.213+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-10-08T16:20:17.215+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6b04689e
+2025-10-08T16:20:17.215+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7ddcd3d
+2025-10-08T16:20:17.216+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-10-08T16:20:17.216+05:30  INFO 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-10-08T16:20:17.233+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/author/", parameters={}
+2025-10-08T16:20:17.246+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2025-10-08T16:20:17.268+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2025-10-08T16:20:17.275+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.bookInventory.exception.GlobalExceptionHandler#handleGeneral(Exception)
+2025-10-08T16:20:17.300+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2025-10-08T16:20:17.302+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["No static resource api/author."]
+2025-10-08T16:20:17.312+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/author.]
+2025-10-08T16:20:17.313+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
+2025-10-08T16:20:29.560+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/author", parameters={}
+2025-10-08T16:20:29.562+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.bookInventory.controller.AuthorController#getAuthor()
+2025-10-08T16:20:29.864+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-10-08T16:20:29.866+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2025-10-08T16:20:29.899+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-10-08T16:20:36.943+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/author", parameters={}
+2025-10-08T16:20:36.944+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.bookInventory.controller.AuthorController#addAuthor(Author)
+2025-10-08T16:20:37.046+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Author [authorId=1, firstName=Gokul, lastName=Anand, photoUrl=null]]
+2025-10-08T16:20:37.095+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.example.bookInventory.exception.GlobalExceptionHandler#handleGeneral(Exception)
+2025-10-08T16:20:37.096+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/yaml]
+2025-10-08T16:20:37.097+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing ["Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.exa (truncated)..."]
+2025-10-08T16:20:37.098+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.ObjectOptimisticLockingFailureException: Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect): [com.example.bookInventory.entity.Author#1]]
+2025-10-08T16:20:37.099+05:30 DEBUG 28112 --- [book-inventory-management] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
