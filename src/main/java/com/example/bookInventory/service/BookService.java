@@ -1,44 +1,18 @@
 package com.example.bookInventory.service;
 
-import com.example.bookInventory.entity.Book;
-
 import java.util.List;
 
+import com.example.bookInventory.entity.Book;
+ 
 public interface BookService {
-
-    // Create a new Book
-    Book save(Book book);
-
-    // Get Book by ISBN
-    Book getByIsbn(String isbn);
-
-    // Get all Books
-    List<Book> getAll();
-
-    // Get Book by title
-    Book getByTitle(String title);
-
-    // Get Books by category
-    List<Book> getByCategory(Integer category);
-
-    // Get Books by publisher ID
-    List<Book> getByPublisherId(Integer publisherId);
-
-    // Update title by ISBN
-    Book updateTitle(String isbn, String title);
-
-    // Update description by ISBN
-    Book updateDescription(String isbn, String description);
-
-    // Update category by ISBN
-    Book updateCategory(String isbn, Integer category);
-
-    // Update edition by ISBN
-    Book updateEdition(String isbn, String edition);
-
-    // Update publisher by ISBN
-    Book updatePublisher(String isbn, Integer publisherId);
-
-    // Delete Book by ISBN
-    void deleteByIsbn(String isbn);
+	Book addBook(Book book);
+	List<Book> getAllBooks();
+	Book getBookByIsbn(String isbn);
+	List<Book> getBooksByTitle(String title);
+	List<Book> getBooksByCategory(Integer category);
+	List<Book> getBooksByPublisherId(Integer publisherId);
+	Book updateBookTitle(String isbn, String newTitle);
+	Book updateBookDescription(String isbn, String newDesc);
+	Book updateBookCategory(String isbn, Integer newCategory);
+	Book updateBookPublisher(String isbn, Integer newPublisher);
 }

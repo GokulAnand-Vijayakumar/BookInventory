@@ -1,12 +1,16 @@
 package com.example.bookInventory.service;
 
+import com.example.bookInventory.entity.Publisher;
 import java.util.List;
 
-import com.example.bookInventory.entity.Publisher;
-
 public interface PublisherService {
-    Publisher save(Publisher obj);
-    Publisher getById(Long id);
+    Publisher save(Publisher publisher);
+    Publisher getById(Long publisherId);
     List<Publisher> getAll();
-    void deleteById(Long id);
+    List<Publisher> getByName(String name);
+    List<Publisher> getByCity(String city);
+    List<Publisher> getByState(String stateCode);
+    Publisher updateName(Long publisherId, String name);
+    Publisher updateCity(Long publisherId, String city);
+    Publisher updateState(Long publisherId, String stateCode);
 }

@@ -1,12 +1,12 @@
 package com.example.bookInventory.service;
 
+import com.example.bookInventory.entity.Reviewer;
 import java.util.List;
 
-import com.example.bookInventory.entity.Reviewer;
-
 public interface ReviewerService {
-    Reviewer save(Reviewer obj);
-    Reviewer getById(Long id);
+    Reviewer save(Reviewer reviewer);
+    Reviewer getById(Long reviewerId);
     List<Reviewer> getAll();
-    void deleteById(Long id);
+    Reviewer updateName(Long reviewerId, String name);
+    Reviewer updateEmployedBy(Long reviewerId, String employedBy);
 }
