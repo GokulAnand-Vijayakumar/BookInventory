@@ -4,7 +4,7 @@ import com.example.bookInventory.entity.Publisher;
 import java.util.List;
 
 public interface PublisherService {
-    Publisher save(Publisher publisher);
+    boolean savePublisher(Publisher publisher); // ✅ updated method
     Publisher getById(Long publisherId);
     List<Publisher> getAll();
     List<Publisher> getByName(String name);

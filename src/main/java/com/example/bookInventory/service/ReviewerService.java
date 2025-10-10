@@ -9,4 +9,5 @@ public interface ReviewerService {
     List<Reviewer> getAll();
     Reviewer updateName(Long reviewerId, String name);
     Reviewer updateEmployedBy(Long reviewerId, String employedBy);
+    boolean saveReviewerIfNotExists(Reviewer reviewer);
 }

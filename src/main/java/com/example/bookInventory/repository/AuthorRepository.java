@@ -15,4 +15,6 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 	List<Author> findByLastNameIgnoreCase(String lastName);
 
 	List<Author> findBooks_ByAuthorId(Long authorId);
+
+	boolean existsByFirstNameAndLastName(String firstName, String lastName);
 }

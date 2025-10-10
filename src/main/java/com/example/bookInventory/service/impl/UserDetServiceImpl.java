@@ -1,5 +1,7 @@
 package com.example.bookInventory.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,18 @@ public class UserDetServiceImpl implements UserDetService {
 	
 	@Autowired
 	private UserDetRepository userDetRepository;
+	
+	@Override
+	public boolean addUserIfNotExists(UserDet userDetails) {
+	    boolean exists = userDetRepository.existsByPhoneNumber(userDetails.getPhoneNumber());
 
+	    if (exists) {
+	        return false;
+	    }
+
+	    userDetRepository.save(userDetails);
+	    return true;
+	}
 	@Override
 	public UserDet addUser(UserDet userDet) {
 		// TODO Auto-generated method stub
@@ -50,6 +63,12 @@ public class UserDetServiceImpl implements UserDetService {
 		UserDet newUser = getUserById(userId);
 		newUser.setLastName(lastName);
 		return userDetRepository.save(newUser);
+	}
+
+	@Override
+	public List<UserDet> getAllUser() {
+		// TODO Auto-generated method stub
+		return userDetRepository.findAll();
 	}
 
 }

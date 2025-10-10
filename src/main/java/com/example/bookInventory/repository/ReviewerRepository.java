@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReviewerRepository extends JpaRepository<Reviewer, Long> {
     // You can add custom query methods if needed
+	boolean existsByNameAndEmployedBy(String name, String employedBy);
 }

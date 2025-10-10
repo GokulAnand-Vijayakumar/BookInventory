@@ -1,10 +1,9 @@
 package com.example.bookInventory.service.impl;
 
 import com.example.bookInventory.entity.Author;
-import com.example.bookInventory.service.AuthorService;
 import com.example.bookInventory.exception.ResourceNotFoundException;
 import com.example.bookInventory.repository.AuthorRepository;
-
+import com.example.bookInventory.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +21,17 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Author addAuthor(Author author) {
-        return authorRepository.save(author);
+    public boolean addAuthor(Author author) {
+        boolean exists = authorRepository.existsByFirstNameAndLastName(
+            author.getFirstName(), author.getLastName()
+        );
+
+        if (exists) {
+            return false;
+        }
+
+        authorRepository.save(author);
+        return true;
     }
 
     @Override
@@ -58,8 +66,7 @@ public class AuthorServiceImpl implements AuthorService {
 
     @Override
     public List<Author> getBookByAuthorId(Long authorId) {
-        // Assuming you have a method in repository or a join with BookAuthor
-        //return authorRepository.findBooksByAuthorId(authorId);
-    	return null;
+        // Placeholder for future implementation
+        return null;
     }
 }

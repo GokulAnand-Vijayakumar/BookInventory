@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/reviewer")
@@ -17,8 +19,19 @@ public class ReviewerController {
     private ReviewerService reviewerService;
 
     @PostMapping("/post")
-    public ResponseEntity<Reviewer> addReviewer(@RequestBody Reviewer reviewer) {
-        return ResponseEntity.ok(reviewerService.save(reviewer));
+    public ResponseEntity<Map<String, String>> addReviewer(@RequestBody Reviewer reviewer) {
+        boolean isAdded = reviewerService.saveReviewerIfNotExists(reviewer); // Update service method
+
+        Map<String, String> response = new HashMap<>();
+        if (isAdded) {
+            response.put("code", "POSTSUCCESS");
+            response.put("message", "Reviewer added successfully");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("code", "ADDFAILS");
+            response.put("message", "Reviewer already exist");
+            return ResponseEntity.status(409).body(response);
+        }
     }
 
     @GetMapping("/{reviewerId}")

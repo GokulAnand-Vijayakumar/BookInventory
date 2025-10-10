@@ -1,6 +1,7 @@
 package com.example.bookInventory.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,28 @@ public class BookServiceImpl implements BookService {
 	
 	@Autowired
 	BookRepository bookRepository;
- 
+    
+	@Override
+	public boolean addBookIfNotExists(Book book) {
+	    if (bookRepository.existsByIsbn(book.getIsbn())) {
+	        return false;
+	    }
+	    bookRepository.save(book);
+	    return true;
+	}
+	
+	@Override
+	public boolean updateBookEdition(String isbn, String newEdition) {
+	    Optional<Book> optionalBook = bookRepository.findById(isbn);
+	    if (optionalBook.isPresent()) {
+	        Book book = optionalBook.get();
+	        book.setEdition(newEdition);
+	        bookRepository.save(book);
+	        return true;
+	    }
+	    return false;
+	}
+	
 	@Override
 	public Book addBook(Book book) {
 		// TODO Auto-generated method stub

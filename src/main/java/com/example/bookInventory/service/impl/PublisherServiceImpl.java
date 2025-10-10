@@ -4,7 +4,6 @@ import com.example.bookInventory.entity.Publisher;
 import com.example.bookInventory.exception.ResourceNotFoundException;
 import com.example.bookInventory.repository.PublisherRepository;
 import com.example.bookInventory.service.PublisherService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +16,17 @@ public class PublisherServiceImpl implements PublisherService {
     private PublisherRepository publisherRepository;
 
     @Override
-    public Publisher save(Publisher publisher) {
-        return publisherRepository.save(publisher);
+    public boolean savePublisher(Publisher publisher) {
+        boolean exists = publisherRepository.existsByNameAndCityAndStateCode(
+            publisher.getName(), publisher.getCity(), publisher.getStateCode()
+        );
+
+        if (exists) {
+            return false;
+        }
+
+        publisherRepository.save(publisher);
+        return true;
     }
 
     @Override

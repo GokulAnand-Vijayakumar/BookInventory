@@ -16,16 +16,21 @@ public class BookConditionServiceImpl implements BookConditionService {
 
     @Autowired
     private BookConditionRepository bookConditionRepository;
-
+    
     @Override
-    public BookCondition save(BookCondition bookCondition) {
-        return bookConditionRepository.save(bookCondition);
+    public boolean existsByRanks(Integer ranks) {
+        return bookConditionRepository.existsByRanks(ranks);
     }
 
     @Override
     public BookCondition getByRanks(Integer ranks) {
-        return bookConditionRepository.findById(ranks)
-                .orElseThrow(() -> new ResourceNotFoundException("BookCondition not found with ranks: " + ranks));
+        return bookConditionRepository.findByRanks(ranks)
+            .orElseThrow(() -> new ResourceNotFoundException("Book condition not found for ranks: " + ranks));
+    }
+
+    @Override
+    public BookCondition save(BookCondition bookCondition) {
+        return bookConditionRepository.save(bookCondition);
     }
 
     @Override

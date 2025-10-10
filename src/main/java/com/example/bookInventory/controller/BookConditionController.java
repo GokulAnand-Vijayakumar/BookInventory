@@ -8,7 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/bookcondition")
@@ -16,10 +18,31 @@ public class BookConditionController {
 
     @Autowired
     private BookConditionService bookConditionService;
+    
+    
+    @PostMapping("/post")
+    public ResponseEntity<Map<String, String>> save(@RequestBody BookCondition bookCondition) {
+        Map<String, String> response = new HashMap<>();
 
-    @PostMapping
-    public ResponseEntity<BookCondition> save(@RequestBody BookCondition bookCondition) {
-        return ResponseEntity.ok(bookConditionService.save(bookCondition));
+        if (bookConditionService.existsByRanks(bookCondition.getRanks())) {
+            BookCondition existing = bookConditionService.getByRanks(bookCondition.getRanks());
+
+            response.put("code", "ADDFAILS");
+            response.put("message", "Book condition already exists with ranks: " + existing.getRanks()
+                    + ", price: " + existing.getPrice()
+                    + ", description: " + existing.getDescription());
+
+            return ResponseEntity.status(409).body(response);
+        }
+
+        BookCondition saved = bookConditionService.save(bookCondition);
+
+        response.put("code", "POSTSUCCESS");
+        response.put("message", "Book Condition added successfully with ranks: " + saved.getRanks()
+                + ", price: " + saved.getPrice()
+                + ", description: " + saved.getDescription());
+
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/{ranks}")

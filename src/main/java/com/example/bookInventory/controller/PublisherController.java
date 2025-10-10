@@ -2,12 +2,13 @@ package com.example.bookInventory.controller;
 
 import com.example.bookInventory.entity.Publisher;
 import com.example.bookInventory.service.PublisherService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/publisher")
@@ -17,10 +18,23 @@ public class PublisherController {
     private PublisherService publisherService;
 
     @PostMapping("/post")
-    public ResponseEntity<Publisher> addPublisher(@RequestBody Publisher publisher) {
-        Publisher saved = publisherService.save(publisher);
-        return ResponseEntity.ok(saved);
+    public ResponseEntity<Map<String, String>> addPublisher(@RequestBody Publisher publisher) {
+        boolean isAdded = publisherService.savePublisher(publisher); // must return true/false
+
+        Map<String, String> response = new HashMap<>();
+        if (isAdded) 
+        {
+            response.put("code", "POSTSUCCESS");
+            response.put("message", "Publisher added successfully");
+            return ResponseEntity.ok(response);
+        } else 
+        {
+            response.put("code", "ADDFAILS");
+            response.put("message", "Publisher already exist");
+            return ResponseEntity.status(409).body(response);
+        }
     }
+        // ... other methods remain unchanged
 
     @GetMapping("/{publisherId}")
     public ResponseEntity<Publisher> getPublisherById(@PathVariable Long publisherId) {

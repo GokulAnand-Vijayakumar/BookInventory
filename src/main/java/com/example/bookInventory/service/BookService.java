@@ -15,4 +15,6 @@ public interface BookService {
 	Book updateBookDescription(String isbn, String newDesc);
 	Book updateBookCategory(String isbn, Integer newCategory);
 	Book updateBookPublisher(String isbn, Integer newPublisher);
+	boolean addBookIfNotExists(Book book);
+	boolean updateBookEdition(String isbn, String newEdition);
 }

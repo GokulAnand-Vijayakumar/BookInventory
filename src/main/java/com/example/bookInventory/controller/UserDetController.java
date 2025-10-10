@@ -1,6 +1,10 @@
 package com.example.bookInventory.controller;
 
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,15 +25,32 @@ public class UserDetController {
 	@Autowired
 	private UserDetService userDetService;
 	
+	@PostMapping("/post")
+	public ResponseEntity<Map<String, String>> addUser(@RequestBody UserDet userDetails) {
+	    boolean isAdded = userDetService.addUserIfNotExists(userDetails);
+
+	    Map<String, String> response = new HashMap<>();
+	    if (isAdded) {
+	        response.put("code", "POSTSUCCESS");
+	        response.put("message", "User added successfully");
+	        return ResponseEntity.ok(response);
+	    } else {
+	        response.put("code", "ADDFAILS");
+	        response.put("message", "User already exist");
+	        return ResponseEntity.status(409).body(response);
+	    }
+	}
+	
+	@GetMapping()
+	public ResponseEntity<List<UserDet>> getAllUser(){
+		return ResponseEntity.ok(userDetService.getAllUser());
+	}
+	
 	@GetMapping("/{userId}")
 	public ResponseEntity<UserDet> getUserById(@PathVariable Integer userId){
 		return ResponseEntity.ok(userDetService.getUserById(userId));
 	}
 	
-	@PostMapping("/post")
-	public ResponseEntity<UserDet> addUser(@RequestBody UserDet userDetails){
-		return ResponseEntity.ok(userDetService.addUser(userDetails));
-	}
 	
 	@PutMapping("/update/phonenumber/{userId}")
 	public ResponseEntity<UserDet> updatePhoneNumberById(@PathVariable Integer userId, @RequestBody String phonenumber){

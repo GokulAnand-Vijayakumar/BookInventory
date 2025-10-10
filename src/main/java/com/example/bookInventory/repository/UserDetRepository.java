@@ -9,5 +9,8 @@ public interface UserDetRepository extends JpaRepository<UserDet, Integer>{
 	boolean existsByUserId(Integer userId);
 
 	UserDet findByUserId(Integer userId);
+	
+	boolean existsByPhoneNumber(String phoneNumber);
+	
 
 }

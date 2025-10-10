@@ -15,6 +15,20 @@ public class ReviewerServiceImpl implements ReviewerService {
 
     @Autowired
     private ReviewerRepository reviewerRepository;
+    
+    @Override
+    public boolean saveReviewerIfNotExists(Reviewer reviewer) {
+        boolean exists = reviewerRepository.existsByNameAndEmployedBy(
+            reviewer.getName(), reviewer.getEmployedBy()
+        );
+
+        if (exists) {
+            return false;
+        }
+
+        reviewerRepository.save(reviewer);
+        return true;
+    }
 
     @Override
     public Reviewer save(Reviewer reviewer) {

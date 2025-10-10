@@ -14,4 +14,6 @@ public interface PublisherRepository extends JpaRepository<Publisher, Long> {
     List<Publisher> findByCityIgnoreCase(String city);
 
     List<Publisher> findByStateCodeIgnoreCase(String stateCode);
+
+	boolean existsByNameAndCityAndStateCode(String name, String city, String stateCode);
 }

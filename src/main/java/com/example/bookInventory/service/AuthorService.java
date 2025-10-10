@@ -6,7 +6,7 @@ import com.example.bookInventory.entity.Author;
 
 public interface AuthorService {
 	List<Author> getAuthors();
-		Author addAuthor(Author author);
+	boolean addAuthor(Author author);
 		Author getAuthorById(Long authorId);
 		List<Author> getAuthorByFirstName(String firstName);
 		List<Author> getAuthorByLastName(String lastName);

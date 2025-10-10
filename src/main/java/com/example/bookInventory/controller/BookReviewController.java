@@ -2,7 +2,11 @@ package com.example.bookInventory.controller;
 
 import com.example.bookInventory.entity.BookReview;
 import com.example.bookInventory.service.BookReviewService;
- 
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +17,29 @@ public class BookReviewController {
  
     @Autowired
     private BookReviewService bookReviewService;
- 
+    
     @PostMapping("/post")
-    public ResponseEntity<BookReview> addBookReview(@RequestBody BookReview bookReview) {
-        BookReview savedReview = bookReviewService.addBookReview(bookReview);
-        return ResponseEntity.ok(savedReview);
+    public ResponseEntity<Map<String, String>> addBookReview(@RequestBody BookReview bookReview) {
+        boolean isAdded = bookReviewService.addBookReviewIfNotExists(bookReview); // Update service method
+
+        Map<String, String> response = new HashMap<>();
+        if (isAdded) {
+            response.put("code", "POSTSUCCESS");
+            response.put("message", "Book review added successfully");
+            return ResponseEntity.ok(response);
+        } else {
+            response.put("code", "ADDFAILS");
+            response.put("message", "Book review already exists");
+            return ResponseEntity.status(409).body(response);
+        }
     }
- 
+    
+    
+    @GetMapping()
+    public ResponseEntity<List<BookReview>> getAllBook() {
+        return ResponseEntity.ok(bookReviewService.getAllBook());
+    }
+    
     @GetMapping("/{isbn}")
     public ResponseEntity<BookReview> getBookReviewByIsbn(@PathVariable String isbn) {
         BookReview review = bookReviewService.getBookReviewByIsbn(isbn);
