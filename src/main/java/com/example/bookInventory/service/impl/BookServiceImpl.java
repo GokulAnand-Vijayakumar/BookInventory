@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
  
 import com.example.bookInventory.entity.Book;
-import com.example.bookInventory.respository.BookRepository;
+import com.example.bookInventory.repository.BookRepository;
 import com.example.bookInventory.service.BookService;
  
 @Service

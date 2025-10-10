@@ -2,7 +2,7 @@ package com.example.bookInventory.service.impl;
 
 import com.example.bookInventory.entity.Publisher;
 import com.example.bookInventory.exception.ResourceNotFoundException;
-import com.example.bookInventory.respository.PublisherRepository;
+import com.example.bookInventory.repository.PublisherRepository;
 import com.example.bookInventory.service.PublisherService;
 
 import org.springframework.beans.factory.annotation.Autowired;

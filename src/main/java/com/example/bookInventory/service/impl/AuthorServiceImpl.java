@@ -3,7 +3,7 @@ package com.example.bookInventory.service.impl;
 import com.example.bookInventory.entity.Author;
 import com.example.bookInventory.service.AuthorService;
 import com.example.bookInventory.exception.ResourceNotFoundException;
-import com.example.bookInventory.respository.AuthorRepository;
+import com.example.bookInventory.repository.AuthorRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

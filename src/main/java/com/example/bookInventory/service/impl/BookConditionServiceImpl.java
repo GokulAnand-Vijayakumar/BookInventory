@@ -2,7 +2,7 @@ package com.example.bookInventory.service.impl;
 
 import com.example.bookInventory.entity.BookCondition;
 import com.example.bookInventory.exception.ResourceNotFoundException;
-import com.example.bookInventory.respository.BookConditionRepository;
+import com.example.bookInventory.repository.BookConditionRepository;
 import com.example.bookInventory.service.BookConditionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
