@@ -1,6 +1,5 @@
 package com.example.bookInventory.service.impl;
 
-
 import com.example.bookInventory.entity.Permrole;
 import com.example.bookInventory.repository.PermroleRepository;
 import com.example.bookInventory.service.PermroleService;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PermroleServiceImpl implements PermroleService {
@@ -27,23 +25,27 @@ public class PermroleServiceImpl implements PermroleService {
     }
 
     @Override
-    public String addPermrole(Permrole permrole) {
-        if (permroleRepository.findByRoleName(permrole.getRoleName()).isPresent()) {
-            return "ADDFAILS";
+    public Permrole addPermrole(Permrole permrole) {
+        Permrole existing = permroleRepository.findByRoleName(permrole.getRoleName());
+        if (existing != null) {
+            return null;
         }
-        permroleRepository.save(permrole);
-        return "POSTSUCCESS";
+        return permroleRepository.save(permrole);
     }
 
     @Override
     public Permrole updatePermrole(Long id, Permrole updatedPermrole) {
-        Optional<Permrole> existing = permroleRepository.findById(id);
-        if (existing.isPresent()) {
-            Permrole role = existing.get();
-            role.setRoleName(updatedPermrole.getRoleName());
-            role.setDescription(updatedPermrole.getDescription());
-            return permroleRepository.save(role);
+        Permrole existing = permroleRepository.findById(id).orElse(null);
+        if (existing != null) {
+            existing.setRoleName(updatedPermrole.getRoleName());
+            existing.setDescription(updatedPermrole.getDescription());
+            return permroleRepository.save(existing);
         }
         return null;
+    }
+
+    @Override
+    public Permrole getPermroleByRoleName(String roleName) {
+        return permroleRepository.findByRoleName(roleName);
     }
 }

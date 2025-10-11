@@ -2,7 +2,6 @@ package com.example.bookInventory.controller;
 
 import com.example.bookInventory.entity.Inventory;
 import com.example.bookInventory.service.InventoryService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,7 @@ public class InventoryController {
 
     @PostMapping("/post")
     public ResponseEntity<Map<String, String>> addInventory(@RequestBody Inventory inventory) {
-        boolean isAdded = inventoryService.saveInventoryIfNotExists(inventory); // Update service method
+        boolean isAdded = inventoryService.saveInventoryIfNotExists(inventory);
         Map<String, String> response = new HashMap<>();
         if (isAdded) {
             response.put("code", "POSTSUCCESS");
@@ -29,10 +28,10 @@ public class InventoryController {
         } else {
             response.put("code", "ADDFAILS");
             response.put("message", "Inventory already exists");
-            return ResponseEntity.status(409).body(response);
+ return ResponseEntity.status(409).body(response);
         }
     }
-    
+
     @GetMapping("/{inventoryId}")
     public ResponseEntity<Inventory> getInventoryById(@PathVariable Long inventoryId) {
         Inventory inventory = inventoryService.getById(inventoryId);

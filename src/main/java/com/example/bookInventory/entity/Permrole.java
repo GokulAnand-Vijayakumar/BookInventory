@@ -15,14 +15,17 @@ public class Permrole {
 
     private String description;
 
+    // Default constructor
     public Permrole() {}
 
+    // Parameterized constructor
     public Permrole(Long id, String roleName, String description) {
         this.id = id;
         this.roleName = roleName;
         this.description = description;
     }
 
+    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -47,6 +50,7 @@ public class Permrole {
         this.description = description;
     }
 
+    // toString method
     @Override
     public String toString() {
         return "Permrole [id=" + id + ", roleName=" + roleName + ", description=" + description + "]";

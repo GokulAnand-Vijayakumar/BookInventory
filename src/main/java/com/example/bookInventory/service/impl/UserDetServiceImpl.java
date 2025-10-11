@@ -1,74 +1,61 @@
 package com.example.bookInventory.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.example.bookInventory.entity.UserDet;
 import com.example.bookInventory.repository.UserDetRepository;
 import com.example.bookInventory.service.UserDetService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserDetServiceImpl implements UserDetService {
-	
-	@Autowired
-	private UserDetRepository userDetRepository;
-	
-	@Override
-	public boolean addUserIfNotExists(UserDet userDetails) {
-	    boolean exists = userDetRepository.existsByPhoneNumber(userDetails.getPhoneNumber());
 
-	    if (exists) {
-	        return false;
-	    }
+    @Autowired
+    private UserDetRepository userDetRepository;
 
-	    userDetRepository.save(userDetails);
-	    return true;
-	}
-	@Override
-	public UserDet addUser(UserDet userDet) {
-		// TODO Auto-generated method stub
-		if(userDetRepository.existsByUserId(userDet.getUserId())) {
-			throw new RuntimeException("User Already Exists");
-		}
-		return userDetRepository.save(userDet);
-	}
+    @Override
+    public List<UserDet> getAllUsers() {
+        return userDetRepository.findAll();
+    }
 
-	@Override
-	public UserDet getUserById(Integer userId) {
-		// TODO Auto-generated method stub
-		return userDetRepository.findByUserId(userId);
-	}
+    @Override
+    public UserDet getUserById(Integer userId) {
+        return userDetRepository.findById(userId).orElse(null);
+    }
 
-	@Override
-	public UserDet updatePhoneNumber(Integer userId, String phoneNumber) {
-		// TODO Auto-generated method stub
-		UserDet newUser = getUserById(userId);
-		newUser.setPhoneNumber(phoneNumber);
-		return userDetRepository.save(newUser);
-	}
+    @Override
+    public UserDet addUser(UserDet userDet) {
+        return userDetRepository.save(userDet);
+    }
 
-	@Override
-	public UserDet updateFirstName(Integer userId, String firstName) {
-		// TODO Auto-generated method stub
-		UserDet newUser = getUserById(userId);
-		newUser.setFirstName(firstName);
-		return userDetRepository.save(newUser);
-	}
+    @Override
+    public UserDet updatePhoneNumber(Integer userId, String phoneNumber) {
+        UserDet user = userDetRepository.findById(userId).orElse(null);
+        if (user != null) {
+            user.setPhoneNumber(phoneNumber);
+            return userDetRepository.save(user);
+        }
+        return null;
+    }
 
-	@Override
-	public UserDet updateLastName(Integer userId, String lastName) {
-		// TODO Auto-generated method stub
-		UserDet newUser = getUserById(userId);
-		newUser.setLastName(lastName);
-		return userDetRepository.save(newUser);
-	}
+    @Override
+    public UserDet updateFirstName(Integer userId, String firstName) {
+        UserDet user = userDetRepository.findById(userId).orElse(null);
+        if (user != null) {
+            user.setFirstName(firstName);
+            return userDetRepository.save(user);
+        }
+        return null;
+    }
 
-	@Override
-	public List<UserDet> getAllUser() {
-		// TODO Auto-generated method stub
-		return userDetRepository.findAll();
-	}
-
+    @Override
+    public UserDet updateLastName(Integer userId, String lastName) {
+        UserDet user = userDetRepository.findById(userId).orElse(null);
+        if (user != null) {
+            user.setLastName(lastName);
+            return userDetRepository.save(user);
+        }
+        return null;
+    }
 }

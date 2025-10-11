@@ -16,15 +16,16 @@ public class InventoryServiceImpl implements InventoryService {
     @Autowired
     private InventoryRepository inventoryRepository;
 
-    @Override
-    public boolean saveInventoryIfNotExists(Inventory inventory) {
-        boolean exists = inventoryRepository.existsByInventoryId(inventory.getInventoryId());
-        if (exists) {
-            return false;
-        }
+
+     public boolean saveInventoryIfNotExists(Inventory inventory) {
+    List<Inventory> existing = inventoryRepository.findByIsbn(inventory.getIsbn());
+    if (existing.isEmpty()) {
         inventoryRepository.save(inventory);
         return true;
     }
+    return false;
+    }
+
 
     @Override
     public Inventory save(Inventory inventory) {

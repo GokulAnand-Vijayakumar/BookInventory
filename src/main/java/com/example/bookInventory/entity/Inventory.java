@@ -7,12 +7,12 @@ import jakarta.persistence.*;
 public class Inventory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "InventoryID")
     private Long inventoryId;
 
-    @Column(name = "ISBN", length = 13, nullable = false)
-    private String isbn;
+
+@Column(name = "ISBN", length = 13, nullable = false, unique = true)
+private String isbn;
 
     @Column(name = "Ranks", nullable = false)
     private Integer ranks;
@@ -20,11 +20,9 @@ public class Inventory {
     @Column(name = "Purchased", nullable = false)
     private Boolean purchased;
 
-
-
     public Inventory() {}
 
-    public Inventory(Long inventoryId, String isbn, Integer ranks, Boolean purchased, Long bookId) {
+    public Inventory(Long inventoryId, String isbn, Integer ranks, Boolean purchased) {
         this.inventoryId = inventoryId;
         this.isbn = isbn;
         this.ranks = ranks;
@@ -62,8 +60,6 @@ public class Inventory {
     public void setPurchased(Boolean purchased) {
         this.purchased = purchased;
     }
-
- 
 
     @Override
     public String toString() {
