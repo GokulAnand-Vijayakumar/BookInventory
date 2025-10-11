@@ -12,5 +12,8 @@ public interface InventoryService {
     void deleteById(Long inventoryId);
     boolean saveInventoryIfNotExists(Inventory inventory);
 	Inventory getById(Long inventoryId);
+	Inventory getInventoryById(int i);
+	Inventory addInventory(Inventory inventory);
+	Inventory updatePurchasedStatus(Long inventoryId, Integer purchased);
   
 }

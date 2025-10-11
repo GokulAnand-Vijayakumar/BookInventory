@@ -34,7 +34,6 @@ public class BookReviewController {
         }
     }
     
-    
     @GetMapping()
     public ResponseEntity<List<BookReview>> getAllBook() {
         return ResponseEntity.ok(bookReviewService.getAllBook());

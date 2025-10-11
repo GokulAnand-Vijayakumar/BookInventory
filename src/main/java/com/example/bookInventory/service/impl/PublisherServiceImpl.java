@@ -75,4 +75,22 @@ public class PublisherServiceImpl implements PublisherService {
         publisher.setStateCode(stateCode);
         return publisherRepository.save(publisher);
     }
+
+	@Override
+	public Publisher addPublisher(Publisher publisher) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Publisher getPublisherById(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Publisher updateCityById(int i, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

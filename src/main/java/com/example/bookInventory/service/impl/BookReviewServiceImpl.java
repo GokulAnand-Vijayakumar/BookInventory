@@ -1,4 +1,5 @@
 package com.example.bookInventory.service.impl;
+
 import com.example.bookInventory.entity.BookReview;
 import com.example.bookInventory.repository.BookReviewRepository;
 import com.example.bookInventory.service.BookReviewService;
@@ -11,23 +12,26 @@ import org.springframework.stereotype.Service;
 @Service
 public class BookReviewServiceImpl implements BookReviewService {
  
-    @Autowired
-    private BookReviewRepository bookReviewRepository;
-    
-    @Override
-    public boolean addBookReviewIfNotExists(BookReview bookReview) {
-        boolean exists = bookReviewRepository.existsByIsbn(bookReview.getIsbn());
-
-        if (exists) {
-            return false;
-        }
-
-        bookReviewRepository.save(bookReview);
-        return true;
-    }
  
+	    @Autowired
+	    private BookReviewRepository bookReviewRepository;
+
+	    @Override
+	    public BookReview addBookReview(BookReview bookReview) {
+	        return bookReviewRepository.save(bookReview);
+	    }
+
+	    @Override
+	    public BookReview updateRatingByIsbn(String isbn, int newRating) {
+	        BookReview review = bookReviewRepository.findByIsbn(isbn);
+	        if (review != null) {
+	            review.setRating(newRating);
+	            return bookReviewRepository.save(review);
+	        }
+	        return null;
+	    }
     @Override
-    public BookReview addBookReview(BookReview bookReview) {
+    public BookReview addBookReview1(BookReview bookReview) {
         return bookReviewRepository.save(bookReview);
     }
  
@@ -46,7 +50,7 @@ public class BookReviewServiceImpl implements BookReviewService {
     @Override
     public BookReview updateCommentsByIsbn(String isbn, String comments) {
         BookReview review = getBookReviewByIsbn(isbn);
-        review.setComments(comments);
+        review.setComment(comments);
         return bookReviewRepository.save(review);
     }
 
@@ -55,4 +59,11 @@ public class BookReviewServiceImpl implements BookReviewService {
 		// TODO Auto-generated method stub
 		return bookReviewRepository.findAll();
 	}
+
+	@Override
+	public boolean addBookReviewIfNotExists(BookReview bookReview) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

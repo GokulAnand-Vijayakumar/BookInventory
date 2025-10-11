@@ -1,71 +1,74 @@
 package com.example.bookInventory.entity;
 
-import jakarta.persistence.*;
-import java.math.BigDecimal;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "bookcondition")
+@Table(name="bookcondition")
 public class BookCondition {
+	@Id
+	@Column(name="ranks")
+	private Integer ranks;
+	
+	@Column(name="description", length=50)
+	private String description;
+	
+	@Column(name="fullDesc", length=255)
+	private String fullDesc;
+	
+	@Column(name="price")
+	private Double price;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ranks;
+	public BookCondition() {
+		super();
+	}
 
-    @Column(name = "Description", length = 50)
-    private String description;
+	public BookCondition(Integer ranks, String description, String fullDesc, Double price) {
+		super();
+		this.ranks = ranks;
+		this.description = description;
+		this.fullDesc = fullDesc;
+		this.price = price;
+	}
 
-    @Column(name = "FullDescription", length = 255)
-    private String fullDescription;
+	public Integer getRanks() {
+		return ranks;
+	}
 
-    @Column(name = "Price", precision = 12, scale = 2)
-    private BigDecimal price;
+	public void setRanks(Integer ranks) {
+		this.ranks = ranks;
+	}
 
-    public BookCondition() {}
+	public String getDescription() {
+		return description;
+	}
 
-    public BookCondition(Integer ranks, String description, String fullDescription, BigDecimal price) {
-        this.ranks = ranks;
-        this.description = description;
-        this.fullDescription = fullDescription;
-        this.price = price;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    // Getters and Setters
+	public String getFullDesc() {
+		return fullDesc;
+	}
 
-    public Integer getRanks() {
-        return ranks;
-    }
+	public void setFullDesc(String fullDesc) {
+		this.fullDesc = fullDesc;
+	}
 
-    public void setRanks(Integer ranks) {
-        this.ranks = ranks;
-    }
+	public Double getPrice() {
+		return price;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public void setPrice(Double price) {
+		this.price = price;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getFullDescription() {
-        return fullDescription;
-    }
-
-    public void setFullDescription(String fullDescription) {
-        this.fullDescription = fullDescription;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    @Override
-    public String toString() {
-        return "BookCondition [ranks=" + ranks + ", description=" + description +
-               ", fullDescription=" + fullDescription + ", price=" + price + "]";
-    }
+	@Override
+	public String toString() {
+		return "BookCondition [ranks=" + ranks + ", description=" + description + ", fullDesc=" + fullDesc + ", price="
+				+ price + "]";
+	}
+	
 }

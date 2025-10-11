@@ -1,69 +1,76 @@
 package com.example.bookInventory.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "inventory")
+@Table(name="inventory")
 public class Inventory {
+	
+	@Id
+	@Column(name="inventoryId")
+	private Integer inventoryId;
+	
+	@Column(name="isbn", length=13)
+	private String isbn;
+	
+	@Column(name="rank")
+	private Integer rank;
+	
+	@Column(name="purchased")
+	private Integer purchased;
 
-    @Id
-    @Column(name = "InventoryID")
-    private Long inventoryId;
+	public Inventory() {
+		super();
+	}
 
+	public Inventory(Integer inventoryId, String isbn, Integer rank, Integer purchased) {
+		super();
+		this.inventoryId = inventoryId;
+		this.isbn = isbn;
+		this.rank = rank;
+		this.purchased = purchased;
+	}
 
-@Column(name = "ISBN", length = 13, nullable = false, unique = true)
-private String isbn;
+	public Integer getInventoryId() {
+		return inventoryId;
+	}
 
-    @Column(name = "Ranks", nullable = false)
-    private Integer ranks;
+	public void setInventoryId(Integer inventoryId) {
+		this.inventoryId = inventoryId;
+	}
 
-    @Column(name = "Purchased", nullable = false)
-    private Boolean purchased;
+	public String getIsbn() {
+		return isbn;
+	}
 
-    public Inventory() {}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 
-    public Inventory(Long inventoryId, String isbn, Integer ranks, Boolean purchased) {
-        this.inventoryId = inventoryId;
-        this.isbn = isbn;
-        this.ranks = ranks;
-        this.purchased = purchased;
-    }
+	public Integer getRank() {
+		return rank;
+	}
 
-    public Long getInventoryId() {
-        return inventoryId;
-    }
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
 
-    public void setInventoryId(Long inventoryId) {
-        this.inventoryId = inventoryId;
-    }
+	public Integer getPurchased() {
+		return purchased;
+	}
 
-    public String getIsbn() {
-        return isbn;
-    }
+	public void setPurchased(Integer purchased) {
+		this.purchased = purchased;
+	}
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public Integer getRanks() {
-        return ranks;
-    }
-
-    public void setRanks(Integer ranks) {
-        this.ranks = ranks;
-    }
-
-    public Boolean getPurchased() {
-        return purchased;
-    }
-
-    public void setPurchased(Boolean purchased) {
-        this.purchased = purchased;
-    }
-
-    @Override
-    public String toString() {
-        return "Inventory [inventoryId=" + inventoryId + ", isbn=" + isbn +
-               ", ranks=" + ranks + ", purchased=" + purchased + "]";
-    }
+	@Override
+	public String toString() {
+		return "Inventory [inventoryId=" + inventoryId + ", isbn=" + isbn + ", rank=" + rank + ", purchased="
+				+ purchased + "]";
+	}
+	
+	
 }

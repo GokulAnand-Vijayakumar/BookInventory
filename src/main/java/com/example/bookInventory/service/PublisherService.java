@@ -13,4 +13,7 @@ public interface PublisherService {
     Publisher updateName(Long publisherId, String name);
     Publisher updateCity(Long publisherId, String city);
     Publisher updateState(Long publisherId, String stateCode);
+	Publisher addPublisher(Publisher publisher);
+	Publisher getPublisherById(int i);
+	Publisher updateCityById(int i, String string);
 }

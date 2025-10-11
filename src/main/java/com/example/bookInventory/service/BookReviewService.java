@@ -11,5 +11,7 @@ public interface BookReviewService {
     BookReview updateCommentsByIsbn(String isbn, String comments);
     boolean addBookReviewIfNotExists(BookReview bookReview);
 	List<BookReview> getAllBook();
+	BookReview addBookReview1(BookReview bookReview);
+	BookReview updateRatingByIsbn(String isbn, int newRating);
 }
 

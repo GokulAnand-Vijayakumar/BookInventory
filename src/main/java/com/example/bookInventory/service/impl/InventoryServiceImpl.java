@@ -44,7 +44,7 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     @Override
-    public Inventory updatePurchasedStatus(Long inventoryId, Boolean purchased) {
+    public Inventory updatePurchasedStatus(Long inventoryId, Integer purchased) {
         Inventory inventory = getByInventoryId(inventoryId);
         inventory.setPurchased(purchased);
         return inventoryRepository.save(inventory);
@@ -60,6 +60,27 @@ public class InventoryServiceImpl implements InventoryService {
 
 	@Override
 	public Inventory getById(Long inventoryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Inventory updatePurchasedStatus(Long inventoryId, Boolean purchased) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Inventory getInventoryById(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Inventory addInventory(Inventory inventory) {
 		// TODO Auto-generated method stub
 		return null;
 	}

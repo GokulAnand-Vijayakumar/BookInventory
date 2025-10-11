@@ -39,7 +39,7 @@ public class BookConditionServiceImpl implements BookConditionService {
     }
 
     @Override
-    public BookCondition updatePrice(Integer ranks, BigDecimal price) {
+    public BookCondition updatePrice(Integer ranks, Double price) {
         BookCondition condition = getByRanks(ranks);
         condition.setPrice(price);
         return bookConditionRepository.save(condition);
@@ -55,7 +55,33 @@ public class BookConditionServiceImpl implements BookConditionService {
     @Override
     public BookCondition updateFullDescription(Integer ranks, String fullDescription) {
         BookCondition condition = getByRanks(ranks);
-        condition.setFullDescription(fullDescription);
+        condition.setDescription(fullDescription);
         return bookConditionRepository.save(condition);
     }
+
+	@Override
+	public BookCondition updateDescByRank(int i, String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BookCondition addBookCondition(BookCondition bookCondition) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BookCondition getBookByRank(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BookCondition updatePrice(Integer ranks, BigDecimal price) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 }
