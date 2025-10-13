@@ -13,7 +13,7 @@ public class SwaggerConfig {
         return new OpenAPI()
             .info(new Info()
                 .title("Book Inventory API")
-                .version("1.0")
+                .version("1.0.0")
                 .description("API documentation for Book Inventory Service"));
     }
 }
