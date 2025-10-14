@@ -63,9 +63,5 @@ public class AuthorController {
         return ResponseEntity.ok(authorService.updateAuthorLastName(authorId, lastName));
     }
 
-    // Uncomment if needed
-    // @GetMapping("/books/{authorId}")
-    // public ResponseEntity<List<Book>> getBooksByAuthorId(@PathVariable Long authorId){
-    //     return ResponseEntity.ok(authorService.getBooksByAuthorId(authorId));
-    // }
+    
 }
