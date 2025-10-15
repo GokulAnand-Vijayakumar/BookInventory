@@ -1,4 +1,4 @@
-package com.example.bookInventory.entity;
+1package com.example.bookInventory.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

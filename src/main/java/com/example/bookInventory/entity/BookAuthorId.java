@@ -11,7 +11,7 @@ public class BookAuthorId {
 	private Long authorId;
 	
 	
-	public BookAuthorId() {
+	public BookAuthorId(String isbn2, Integer authorId2) {
 		super();
 	}
 

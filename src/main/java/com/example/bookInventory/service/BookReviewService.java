@@ -6,12 +6,11 @@ import com.example.bookInventory.entity.BookReview;
 
 public interface BookReviewService {
     BookReview addBookReview(BookReview bookReview);
-    BookReview getBookReviewByIsbn(String isbn);
-    BookReview updateRatingByIsbn(String isbn, Integer rating);
-    BookReview updateCommentsByIsbn(String isbn, String comments);
     boolean addBookReviewIfNotExists(BookReview bookReview);
-	List<BookReview> getAllBook();
-	BookReview addBookReview1(BookReview bookReview);
-	BookReview updateRatingByIsbn(String isbn, int newRating);
+    BookReview getBookReviewByIsbn(String isbn);
+    List<BookReview> getAllBookReviews();
+    BookReview updateRatingByIsbn(String isbn, int rating);
+    BookReview updateCommentsByIsbn(String isbn, String comments);
 }
+
 

@@ -11,24 +11,33 @@ import com.example.bookInventory.repository.BookAuthorRepository;
 import com.example.bookInventory.service.BookAuthorService;
 
 @Service
-public class BookAuthorServiceImpl implements BookAuthorService{
-	
-	@Autowired
-	private BookAuthorRepository bookAuthorRepository;
-	
-	@Override
-	public List<BookAuthor> getAllBookAuthor() {
-		return bookAuthorRepository.findAll();
-	}
+public class BookAuthorServiceImpl implements BookAuthorService {
+
+    @Autowired
+    private BookAuthorRepository bookAuthorRepository;
+
+    @Override
+    public List<BookAuthor> getAllBookAuthor() {
+        return bookAuthorRepository.findAll();
+    }
+
+    @Override
+    public void assignAuthorToBook(String isbn, Integer authorId, String primaryAuthorFlag) {
+        BookAuthorId id = new BookAuthorId(isbn, authorId);
+        BookAuthor bookAuthor = new BookAuthor(id, primaryAuthorFlag);
+        bookAuthorRepository.save(bookAuthor);
+    }
+
+    @Override
+    public void removeAuthorFromBook(String isbn, Integer authorId) {
+        BookAuthorId id = new BookAuthorId(isbn, authorId);
+        bookAuthorRepository.deleteById(id);
+    }
 
 	@Override
 	public void assignAuthorToBook(String isbn, Long authorId, String primaryAuthorFlag) {
 		// TODO Auto-generated method stub
-
-		BookAuthorId id = new BookAuthorId(isbn, authorId);
-        BookAuthor bookAuthor = new BookAuthor(id, primaryAuthorFlag);
-        bookAuthorRepository.save(bookAuthor);
-
+		
 	}
 
 	@Override
@@ -36,5 +45,4 @@ public class BookAuthorServiceImpl implements BookAuthorService{
 		// TODO Auto-generated method stub
 		
 	}
-
 }

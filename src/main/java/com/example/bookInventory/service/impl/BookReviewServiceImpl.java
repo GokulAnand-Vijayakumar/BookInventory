@@ -11,59 +11,52 @@ import org.springframework.stereotype.Service;
  
 @Service
 public class BookReviewServiceImpl implements BookReviewService {
- 
- 
-	    @Autowired
-	    private BookReviewRepository bookReviewRepository;
 
-	    @Override
-	    public BookReview addBookReview(BookReview bookReview) {
-	        return bookReviewRepository.save(bookReview);
-	    }
+    @Autowired
+    private BookReviewRepository bookReviewRepository;
 
-	    @Override
-	    public BookReview updateRatingByIsbn(String isbn, int newRating) {
-	        BookReview review = bookReviewRepository.findByIsbn(isbn);
-	        if (review != null) {
-	            review.setRating(newRating);
-	            return bookReviewRepository.save(review);
-	        }
-	        return null;
-	    }
     @Override
-    public BookReview addBookReview1(BookReview bookReview) {
+    public BookReview addBookReview(BookReview bookReview) {
         return bookReviewRepository.save(bookReview);
     }
- 
+
+    @Override
+    public boolean addBookReviewIfNotExists(BookReview bookReview) {
+        boolean exists = bookReviewRepository.existsByIsbn(bookReview.getIsbn());
+        if (!exists) {
+            bookReviewRepository.save(bookReview);
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public BookReview getBookReviewByIsbn(String isbn) {
         return bookReviewRepository.findByIsbn(isbn);
     }
- 
+
     @Override
-    public BookReview updateRatingByIsbn(String isbn, Integer rating) {
-        BookReview review = getBookReviewByIsbn(isbn);
-        review.setRating(rating);
-        return bookReviewRepository.save(review);
+    public List<BookReview> getAllBookReviews() {
+        return bookReviewRepository.findAll();
     }
- 
+
+    @Override
+    public BookReview updateRatingByIsbn(String isbn, int rating) {
+        BookReview review = getBookReviewByIsbn(isbn);
+        if (review != null) {
+            review.setRating(rating);
+            return bookReviewRepository.save(review);
+        }
+        return null;
+    }
+
     @Override
     public BookReview updateCommentsByIsbn(String isbn, String comments) {
         BookReview review = getBookReviewByIsbn(isbn);
-        review.setComment(comments);
-        return bookReviewRepository.save(review);
+        if (review != null) {
+            review.setComment(comments);
+            return bookReviewRepository.save(review);
+        }
+        return null;
     }
-
-	@Override
-	public List<BookReview> getAllBook() {
-		// TODO Auto-generated method stub
-		return bookReviewRepository.findAll();
-	}
-
-	@Override
-	public boolean addBookReviewIfNotExists(BookReview bookReview) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

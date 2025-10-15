@@ -27,7 +27,6 @@ public class BookAuthorController {
 		return ResponseEntity.ok(bookAuthorService.getAllBookAuthor());
 	}
 	
-	
 	@PostMapping("/assign")
 	public ResponseEntity<String> assignAuthor(@RequestBody BookAuthorId request )
 		{

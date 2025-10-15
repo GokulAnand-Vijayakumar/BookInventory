@@ -5,8 +5,8 @@ import com.example.bookInventory.entity.BookReview;
  
  
 @Repository
-public interface BookReviewRepository extends JpaRepository<BookReview, Long> {
+public interface BookReviewRepository extends JpaRepository<BookReview, String> {
     BookReview findByIsbn(String isbn);
     boolean existsByIsbn(String isbn);
-    
 }
+
